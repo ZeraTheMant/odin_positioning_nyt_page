@@ -6,13 +6,38 @@
     padding: 0;
 }
 
+/* general start */
+
+body {
+    font-family: 'Franklin Gothic';
+}
+
+.mobile-toggle {
+    display: none;
+}
+
+.mobile-toggle-reversed {
+    display: block;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.relative {
+    position: relative;
+}
+
+/* general end */
+
+/* nav css start */
+
 nav {
     border-bottom: 1px solid #e2e2e2;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 5px 20px;
     align-items: center;
-    font-family: 'Franklin Gothic';
 }
 
 nav div:last-child {
@@ -78,22 +103,6 @@ nav button:hover {
     align-items: center;
 }
 
-.mobile-toggle {
-    display: none;
-}
-
-.mobile-toggle-reversed {
-    display: block;
-}
-
-.cursor {
-    cursor: pointer;
-}
-
-.relative {
-    position: relative;
-}
-
 #clear-search {
     color: grey;
     font-size: 0.8rem;
@@ -104,6 +113,72 @@ nav button:hover {
 
 .disabled-display {
     opacity: 0.5;
+}
+
+/* nav css end */
+
+/* aside css start */
+
+aside {
+    background: white;
+    height: 100vh;
+    width: 225px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    padding: 20px;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+aside a {
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+aside a:not(:first-child) {
+    margin-top: 10px;
+}
+
+.with-children {
+    justify-content: space-between;
+}
+
+.sidebar-angle, hr {
+    color: lightgrey;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* aside css end */
+
+#testes {
+    width: 150px;
+    height: 300px;
+    background: white;
+    box-shadow: 5px 10px 18px #888888;
+    position: absolute;
+    left: 210px;
+    z-index: 4;
+}
+
+#testes:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+
+    border-top: 10px solid transparent;
+    border-bottom: 10x solid transparent; 
+    border-right: 20px solid white; 
+
+    left: -20px;
+    bottom: 240px;
 }
 
 

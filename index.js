@@ -4,7 +4,14 @@ const searchBtn = document.querySelector("#search-btn");
 const searchContainer = document.querySelector("#search-container");
 const activateSearchBtn = document.querySelector("#activate-search-btn");
 const categoryLink = document.querySelector("#category-link");
+const menuBtn = document.querySelector("#clickable-menu-btn");
+const sidebarWidescreen = document.querySelector("aside");
+//const sidebarSideBox = document.querySelector("#testes");
+const withChildren = document.querySelectorAll(".with-children");
+
 var searchBoxDisplayed = false;
+var sidebarDisplayedWidescreen = false;
+var x = false;
 
 function searchBtnToggle(e) {
     if (e.target.value.trim() == "") {
@@ -36,7 +43,36 @@ function clearSearchBox() {
     searchBox.value = "";
 }
 
+function hideSidebarSubBox(e) {
+    //sidebarSideBox.classList.add("hidden");
+    sidebarSideBoxDisplayed = false;
+    e.target.lastElementChild.lastElementChild.innerHTML = "";
+}
+
+function displaySidebarSubBox(e) {
+    //sidebarSideBox.classList.remove("hidden");
+    const a = document.createElement('div');
+    a.id = "testes";
+    sidebarSideBoxDisplayed = true;
+    
+    const rect = e.target.getBoundingClientRect();
+    a.style.top = (rect.top - 40) + "px";
+    e.target.lastElementChild.lastElementChild.appendChild(a)
+}
+
 clearSearch.addEventListener('click', clearSearchBox);
+menuBtn.addEventListener('click', () => {
+    sidebarWidescreen.classList.remove("hidden");
+    sidebarDisplayedWidescreen = true;
+});
 
 searchBox.addEventListener('keyup', searchBtnToggle);
 activateSearchBtn.addEventListener('click', toggleSearchBox);
+sidebarWidescreen.addEventListener('mouseleave', () => {   
+    setTimeout(() => { sidebarWidescreen.classList.add("hidden"); }, 500);
+});
+
+withChildren.forEach(link => {
+   link.addEventListener('mouseenter', displaySidebarSubBox); 
+   link.addEventListener('mouseleave', hideSidebarSubBox); 
+});
