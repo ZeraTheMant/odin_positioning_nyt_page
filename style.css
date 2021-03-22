@@ -9,9 +9,10 @@
 nav {
     border-bottom: 1px solid #e2e2e2;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 5px 20px;
     align-items: center;
+    font-family: 'Franklin Gothic';
 }
 
 nav div:last-child {
@@ -42,7 +43,6 @@ nav div:last-child {
     text-decoration: none;
     color: black;
     font-weight: bold;
-    font-family: 'Franklin Gothic';
 }
 
 #left-nav a:hover {
@@ -55,7 +55,6 @@ nav div:last-child {
 
 nav button {
     color: white;
-    font-family: 'Franklin Gothic';
     border: 0;
     background-color: #567b95;
     border: 1px solid #326891;
@@ -65,12 +64,18 @@ nav button {
 }
 
 nav input {
-    padding: 8px;
+    padding: 6px 80px 6px 20px;
     border-radius: 3px;
+    width: 210px;
 }
 
 nav button:hover {
     background-color: #326891;
+}
+
+#search-box-container {
+    gap: 5px;
+    align-items: center;
 }
 
 .mobile-toggle {
@@ -85,6 +90,22 @@ nav button:hover {
     cursor: pointer;
 }
 
+.relative {
+    position: relative;
+}
+
+#clear-search {
+    color: grey;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 30%;
+    right: 10px;
+}
+
+.disabled-display {
+    opacity: 0.5;
+}
+
 
 @media only screen and (min-width: 1000px) {
     .mobile-toggle {
@@ -94,4 +115,8 @@ nav button:hover {
     .mobile-toggle-reversed {
         display: none;
     }    
+}
+
+.hidden {
+    display: none;
 }

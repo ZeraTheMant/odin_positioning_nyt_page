@@ -15,14 +15,22 @@
                 <i class="fa fa-bars"></i>
             </div>
  
-            <i class="fa fa-search mobile-toggle cursor"></i>
+            <i class="fa fa-search mobile-toggle cursor" id="activate-search-btn"></i>
             
-            <div class="flex mobile-toggle">
-                <input type="text" placeholder="SEARCH">
-                <button type="button">GO</button>
+            <div class="mobile-toggle hidden" id="search-container">
+                <div class="flex" id="search-box-container">
+                    <div class="relative">
+                        <form id="search-form">
+                            <input type="text" placeholder="SEARCH" id="search-box" required>
+                            <span class="cursor" id="clear-search">CLEAR</span>     
+                        </form>
+                    </div>
+                    
+                    <div><button type="submit" class="disabled-display" id="search-btn" form="search-form" disabled>GO</button></div>
+                </div>
             </div>
             
-            <a href="#" class="mobile-toggle">SPACE & COSMOS</a>
+            <a href="#" id="category-link" class="mobile-toggle">SPACE & COSMOS</a>
         </div>
         
         <div id="nyt-logo-container">
