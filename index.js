@@ -51,13 +51,17 @@ function hideSidebarSubBox(e) {
 
 function displaySidebarSubBox(e) {
     //sidebarSideBox.classList.remove("hidden");
-    const a = document.createElement('div');
-    a.id = "testes";
+    const sidebarSideBox = document.createElement('div');
+    sidebarSideBox.id = "sidebar-side-box";
+    const sideBoxHeader = document.createElement('h5');
+    sideBoxHeader.textContent = e.target.textContent.trim();
+    sidebarSideBox.appendChild(sideBoxHeader);
+
     sidebarSideBoxDisplayed = true;
     
     const rect = e.target.getBoundingClientRect();
-    a.style.top = (rect.top - 40) + "px";
-    e.target.lastElementChild.lastElementChild.appendChild(a)
+    sidebarSideBox.style.top = (rect.top - 40) + "px";
+    e.target.lastElementChild.lastElementChild.appendChild(sidebarSideBox)
 }
 
 clearSearch.addEventListener('click', clearSearchBox);
