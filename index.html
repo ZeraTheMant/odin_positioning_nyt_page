@@ -10,12 +10,18 @@
 </head>
 <body>
     <nav>
-        <div id="left-nav">
-            <div id="clickable-menu-btn">
+        <div id="left-nav" class="flex">
+            <div id="clickable-menu-btn" class="cursor">
                 <i class="fa fa-bars"></i>
             </div>
  
-            <i class="fa fa-search mobile-toggle"></i>
+            <i class="fa fa-search mobile-toggle cursor"></i>
+            
+            <div class="flex mobile-toggle">
+                <input type="text" placeholder="SEARCH">
+                <button type="button">GO</button>
+            </div>
+            
             <a href="#" class="mobile-toggle">SPACE & COSMOS</a>
         </div>
         
@@ -23,9 +29,16 @@
             <img id="nyt-logo" src="images/nyt.png">
         </div>
         
-        <div>
-            <i class="fa fa-user"></i>
+        <div id="right-nav" class="flex">
+            <button type="button" class="mobile-toggle cursor">SUBSCRIBE NOW</button>
+            <button type="button" class="mobile-toggle cursor">LOG IN</button>
+        
+            <div class="mobile-toggle-reversed">
+                <i class="fa fa-user cursor"></i>
+            </div>
         </div>
     </nav>
+    
+    <script src="index.js"></script>
 </body>
 </html>

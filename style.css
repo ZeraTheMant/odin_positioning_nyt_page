@@ -9,8 +9,8 @@
 nav {
     border-bottom: 1px solid #e2e2e2;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 10px 20px;
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 5px 20px;
     align-items: center;
 }
 
@@ -30,8 +30,12 @@ nav div:last-child {
 }
 
 #left-nav {
-    display: flex;
     gap: 25px;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
 }
 
 #left-nav a {
@@ -45,6 +49,49 @@ nav div:last-child {
     text-decoration: underline;
 }
 
+#right-nav {
+    gap: 5px;
+}
+
+nav button {
+    color: white;
+    font-family: 'Franklin Gothic';
+    border: 0;
+    background-color: #567b95;
+    border: 1px solid #326891;
+    border-radius: 3px;
+    padding: 8px;
+    font-size: 0.8rem;
+}
+
+nav input {
+    padding: 8px;
+    border-radius: 3px;
+}
+
+nav button:hover {
+    background-color: #326891;
+}
+
 .mobile-toggle {
     display: none;
+}
+
+.mobile-toggle-reversed {
+    display: block;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .mobile-toggle {
+        display: block;
+    }   
+
+    .mobile-toggle-reversed {
+        display: none;
+    }    
 }
