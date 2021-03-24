@@ -1,21 +1,21 @@
 const SUB_BOX_CONTENTS = {
-	world: {
+	"World": [
 		"Africa",
 		"Australia",
 		"Americas",
 		"Asia Pacific",
 		"Europe",
 		"Middle East"
-	},
-	us: {
+	],
+	"U.S.": [
 		"Education",
 		"The Upshot"
-	},
-	politics: {
+	],
+	"Politics": [
 		"Joe Biden",
 		"Trump Impeachment"
-	},
-	business: {
+	],
+	"Business": [
 		"Dealbook",
 		"Economy",
 		"Energy",
@@ -24,26 +24,26 @@ const SUB_BOX_CONTENTS = {
 		"Entrepreneurship",
 		"Your Money",
 		"Automobiles"
-	},
-	opinion: {
+	],
+	"Opinion": [
 		"Op-Ed Columnists",
 		"Editorials",
 		"Op-Ed Contributors",
 		"Letters",
 		"Sunday Review",
-	},
-	tech: {
+	],
+	"Tech": [
 		"Personal Tech"
-	},
-	science: {
+	],
+	"Science": [
 		"Environment",
 		"Space & Cosmos"
-	},
-	health: {
+	],
+	"Health": [
 		"Money & Policy",
 		"Health Guide"
-	},
-	sports: {
+	],
+	"Sports": [
 		"Baseball",
 		"Basketball: College",
 		"Basketball: N.B.A.",
@@ -53,8 +53,8 @@ const SUB_BOX_CONTENTS = {
 		"Soccer",
 		"Tennis",
 		"Olympics",
-	},
-	arts: {
+	],
+	"Arts": [
 		"Art & Design",
 		"Dance",
 		"Movies",
@@ -64,24 +64,25 @@ const SUB_BOX_CONTENTS = {
 		"Theater",
 		"Watching",
 		"Awards Season"
-	},
-	books: {
+	],
+	"Books": [
 		"Best Sellers",
 		"By the Book",
 		"The Book Review",
 		"Book Review Podcast",
 		"Globetrotting"
-	},
-	style: {
+	],
+	"Style": [
 		"Men's Style",
 		"On the Runway",
 		"Love"
-	},
-	food: {
+
+	],
+	"Food": [
 		"Cooking",
 		"Restaurant Search"
-	},
-	more: {
+	],
+	"More": [
 		"Reader Center",
 		"Parenting",
 		"Wirecutter",
@@ -103,5 +104,5 @@ const SUB_BOX_CONTENTS = {
 		"Tools & Services",
 		"Jobs",
 		"Corrections"
-	}
+	]
 }

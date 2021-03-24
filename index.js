@@ -61,7 +61,8 @@ function displaySidebarSubBox(e) {
     
     const rect = e.target.getBoundingClientRect();
     sidebarSideBox.style.top = (rect.top - 40) + "px";
-    e.target.lastElementChild.lastElementChild.appendChild(sidebarSideBox)
+    e.target.lastElementChild.lastElementChild.appendChild(sidebarSideBox);
+	alert(e.target.textContent);
 }
 
 clearSearch.addEventListener('click', clearSearchBox);
