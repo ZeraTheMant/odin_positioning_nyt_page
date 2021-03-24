@@ -82,6 +82,13 @@ const SUB_BOX_CONTENTS = {
 		"Cooking",
 		"Restaurant Search"
 	],
+	"Real Estate": [
+		"On the Market",
+		"Mortgate Calculator",
+		"Living In",
+		"The High End",
+		"What You Get"
+	],
 	"More": [
 		"Reader Center",
 		"Parenting",

@@ -62,7 +62,17 @@ function displaySidebarSubBox(e) {
     const rect = e.target.getBoundingClientRect();
     sidebarSideBox.style.top = (rect.top - 40) + "px";
     e.target.lastElementChild.lastElementChild.appendChild(sidebarSideBox);
-	alert(e.target.textContent);
+	
+	const category = e.target.firstElementChild.textContent;
+	const category_links_arr = SUB_BOX_CONTENTS[category];
+	
+	category_links_arr.forEach(cat_link => {
+		const new_cat_link = document.createElement('a');
+		new_cat_link.textContent = cat_link;
+		new_cat_link.classList.add('zxc')
+		sidebarSideBox.appendChild(new_cat_link);
+		sidebarSideBox.style.width = new_cat_link.style.width;
+	});
 }
 
 clearSearch.addEventListener('click', clearSearchBox);
