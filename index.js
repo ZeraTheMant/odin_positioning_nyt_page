@@ -60,7 +60,14 @@ function displaySidebarSubBox(e) {
     sidebarSideBoxDisplayed = true;
     
     const rect = e.target.getBoundingClientRect();
-    sidebarSideBox.style.top = (rect.top - 40) + "px";
+	
+	if (rect.top >= (screen.height * 0.7)) {
+		sidebarSideBox.style.top = 0;
+		sidebarSideBox.style.bottom = (rect.bottom - 40) + "px";	
+	} else {
+	    sidebarSideBox.style.top = (rect.top - 40) + "px";	
+	}
+	
     e.target.lastElementChild.lastElementChild.appendChild(sidebarSideBox);
 	
 	const category = e.target.firstElementChild.textContent;
