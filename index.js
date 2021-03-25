@@ -62,8 +62,10 @@ function displaySidebarSubBox(e) {
     const rect = e.target.getBoundingClientRect();
 	
 	if (rect.top >= (screen.height * 0.7)) {
-		sidebarSideBox.style.top = 0;
-		sidebarSideBox.style.bottom = (rect.bottom - 40) + "px";	
+		//sidebarSideBox.style.bottom = (rect.bottom) + "px";
+		//alert((rect.bottom) + "px")
+		//alert(sidebarSideBox.style.bottom)
+		sidebarSideBox.style.bottom = "500px";
 	} else {
 	    sidebarSideBox.style.top = (rect.top - 40) + "px";	
 	}
