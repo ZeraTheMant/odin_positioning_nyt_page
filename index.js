@@ -61,15 +61,6 @@ function displaySidebarSubBox(e) {
     
     const rect = e.target.getBoundingClientRect();
 	
-	if (rect.top >= (screen.height * 0.7)) {
-		//sidebarSideBox.style.bottom = (rect.bottom) + "px";
-		//alert((rect.bottom) + "px")
-		//alert(sidebarSideBox.style.bottom)
-		sidebarSideBox.style.bottom = "500px";
-	} else {
-	    sidebarSideBox.style.top = (rect.top - 40) + "px";	
-	}
-	
     e.target.lastElementChild.lastElementChild.appendChild(sidebarSideBox);
 	
 	const category = e.target.firstElementChild.textContent;
@@ -82,6 +73,16 @@ function displaySidebarSubBox(e) {
 		sidebarSideBox.appendChild(new_cat_link);
 		sidebarSideBox.style.width = new_cat_link.style.width;
 	});
+    
+	if (rect.top >= (screen.height * 0.7)) {
+		//sidebarSideBox.style.bottom = (rect.bottom) + "px";
+		//alert((rect.bottom) + "px")
+		//alert(sidebarSideBox.style.bottom)
+		sidebarSideBox.style.bottom = (rect.bottom - (screen.height - 100)) + "px";
+
+	} else {
+	    sidebarSideBox.style.top = (rect.top - 40) + "px";	
+	}
 }
 
 clearSearch.addEventListener('click', clearSearchBox);

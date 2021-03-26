@@ -188,6 +188,16 @@ h5 {
     color: grey;
 }
 
+.display-based-on-screen-height {
+    display: none;
+}
+
+@media screen and (min-height: 800px) {
+    .display-based-on-screen-height {
+        display: block;
+    }
+}
+
 
 @media only screen and (min-width: 1000px) {
     .mobile-toggle {
