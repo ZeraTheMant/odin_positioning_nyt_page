@@ -169,7 +169,7 @@ hr {
 	white-space: nowrap;
 }
 
-#sidebar-side-box:before {
+/*#sidebar-side-box:before*/ #def {
     content: "";
     width: 0px;
     height: 0px;
@@ -179,8 +179,8 @@ hr {
     border-bottom: 10x solid transparent; 
     border-right: 20px solid white; 
 
-    left: -20px;
-    top: 40px;
+    left: -40px;
+    /*top: 30px;*/
 }
 
 h5 {
@@ -192,6 +192,13 @@ h5 {
 .display-based-on-screen-height {
     display: none;
 }
+
+#abc {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
 
 @media screen and (min-height: 800px) {
     .display-based-on-screen-height {

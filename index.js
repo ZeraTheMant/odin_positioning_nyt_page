@@ -6,7 +6,6 @@ const activateSearchBtn = document.querySelector("#activate-search-btn");
 const categoryLink = document.querySelector("#category-link");
 const menuBtn = document.querySelector("#clickable-menu-btn");
 const sidebarWidescreen = document.querySelector("aside");
-//const sidebarSideBox = document.querySelector("#testes");
 const withChildren = document.querySelectorAll(".with-children");
 
 var searchBoxDisplayed = false;
@@ -52,6 +51,14 @@ function displaySidebarSubBox(e) {
     //sidebarSideBox.classList.remove("hidden");
     const sidebarSideBox = document.createElement('div');
     sidebarSideBox.id = "sidebar-side-box";
+    
+    const x = document.createElement('div');
+    x.id = "abc";
+    const y = document.createElement('div');
+    y.id = "def";
+    x.appendChild(y);
+    sidebarSideBox.appendChild(x);
+    
     const sideBoxHeader = document.createElement('h5');
     sideBoxHeader.textContent = e.target.textContent.trim();
     sidebarSideBox.appendChild(sideBoxHeader);
@@ -63,23 +70,25 @@ function displaySidebarSubBox(e) {
 	const category = e.target.firstElementChild.textContent;
 	const category_links_arr = SUB_BOX_CONTENTS[category];
     
-    let x = 0;
 	
 	category_links_arr.forEach(cat_link => {
 		const new_cat_link = document.createElement('a');
 		new_cat_link.textContent = cat_link;
 		sidebarSideBox.appendChild(new_cat_link);
-		x += 20;
 	});
+    
+    e.target.lastElementChild.lastElementChild.appendChild(sidebarSideBox);
     
 	if (rect.top >= (screen.height * 0.7)) {
         sidebarSideBox.style.bottom = ((window.innerHeight - rect.bottom) - 30) + "px";	
+  
+        const sidebarSideBoxRect = sidebarSideBox.getBoundingClientRect();  
+        y.style.bottom = (((sidebarSideBoxRect.bottom - sidebarSideBoxRect.top) - 50) * -1) + "px";
 
 	} else {
 	    sidebarSideBox.style.top = (rect.top - 40) + "px";	
+        y.style.top = "30px";
 	}
-    
-    e.target.lastElementChild.lastElementChild.appendChild(sidebarSideBox);
 }
 
 clearSearch.addEventListener('click', clearSearchBox);
