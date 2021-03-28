@@ -144,6 +144,7 @@ aside a:not(:first-child) {
 
 .with-children {
     justify-content: space-between;
+
 }
 
 .sidebar-angle, hr {
