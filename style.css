@@ -78,7 +78,7 @@ nav div:last-child {
     gap: 5px;
 }
 
-nav button {
+button {
     color: white;
     border: 0;
     background-color: #567b95;
@@ -88,22 +88,22 @@ nav button {
     font-size: 0.8rem;
 }
 
-nav input {
+input {
     padding: 6px 80px 6px 20px;
     border-radius: 3px;
     width: 210px;
 }
 
-nav button:hover {
+button:hover {
     background-color: #326891;
 }
 
-#search-box-container {
+.search-box-container {
     gap: 5px;
     align-items: center;
 }
 
-#clear-search {
+.clear-search {
     color: grey;
     font-size: 0.8rem;
     position: absolute;
@@ -117,9 +117,9 @@ nav button:hover {
 
 /* nav css end */
 
-/* aside css start */
+/* desktop view sidebar css start */
 
-aside {
+#desktop-view-sidebar {
     background: white;
     height: 100vh;
     width: 225px;
@@ -131,14 +131,18 @@ aside {
     box-shadow: 5px 10px 18px #888888;
 }
 
-aside a {
+#desktop-view-sidebar a {
     font-weight: bold;
     display: block;
     text-decoration: none;
     color: black;
 }
 
-aside a:not(:first-child) {
+#desktop-view-sidebar a.flex {
+	display: flex;
+}
+
+#desktop-view-sidebar a:not(:first-child) {
     margin-top: 10px;
 }
 
@@ -156,7 +160,7 @@ hr {
     margin-bottom: 10px;
 }
 
-/* aside css end */
+
 
 #sidebar-side-box {
     min-height: 60px;
@@ -169,7 +173,7 @@ hr {
 	white-space: nowrap;
 }
 
-/*#sidebar-side-box:before*/ #def {
+/*#sidebar-side-box:before*/ #thought-arrow-bubble {
     content: "";
     width: 0px;
     height: 0px;
@@ -183,20 +187,76 @@ hr {
     /*top: 30px;*/
 }
 
+#thought-arrow-bubble-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
 h5 {
     font-weight: normal;
     text-transform: uppercase;
     color: grey;
 }
 
-.display-based-on-screen-height {
-    display: none;
+/* desktop sidebar css end */
+
+
+
+/* mobile sidebar css start */
+
+#mobile-view-sidebar {
+	width: 100%;
 }
 
-#abc {
-    width: 100%;
-    height: 100%;
-    position: relative;
+#mobile-view-sidebar a {
+	display: block;
+	text-decoration: none;
+	color: black;
+	font-weight: normal;
+}
+
+.mobile-links-divider {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+#mobile-view-sidebar-inner-container {
+	width: 60%;
+	margin: auto;
+	padding: 20px 0;
+}
+
+.mobile-links-divider {
+	margin-top: 20px;
+}
+
+.mobile-link-section a:not(:first-child) {
+	margin-top: 10px;
+}
+
+#mobile-view-links-container > div:not(:first-child) {
+	margin-top: 30px;
+}
+
+aside .search-box-container input {
+	width: 100%;
+}
+
+#mobile-view-search-container {
+	margin-top: 10px;
+}
+
+#mobile-view-links-container {
+	margin-top: 50px;
+}
+
+/* mobile sidebar css end */
+
+
+
+.display-based-on-screen-height {
+    display: none;
 }
 
 

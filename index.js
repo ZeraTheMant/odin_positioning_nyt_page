@@ -1,50 +1,63 @@
-const clearSearch = document.querySelector("#clear-search");
-const searchBox = document.querySelector("#search-box");
-const searchBtn = document.querySelector("#search-btn");
-const searchContainer = document.querySelector("#search-container");
+const clearSearchBtns = document.querySelectorAll(".clear-search");
+const searchBoxes = document.querySelectorAll(".search-box");
+const searchBtns = document.querySelectorAll(".search-btn");
+const searchContainers = document.querySelectorAll(".search-container");
 const activateSearchBtn = document.querySelector("#activate-search-btn");
 const categoryLink = document.querySelector("#category-link");
 const menuBtn = document.querySelector("#clickable-menu-btn");
-const sidebarWidescreen = document.querySelector("aside");
+const sidebarWidescreen = document.querySelector("#desktop-view-sidebar");
+const mobileViewSidebar = document.querySelector("#mobile-view-sidebar");
 const withChildren = document.querySelectorAll(".with-children");
+const mobileViewSidebarCloseBtn = document.querySelector("#mobile-view-sidebar-close-btn");
+const userBtn = document.querySelector("#user-btn");
 
 var searchBoxDisplayed = false;
-var sidebarDisplayedWidescreen = false;
-var x = false;
+var sidebarDisplayed = false;
 
 function searchBtnToggle(e) {
     if (e.target.value.trim() == "") {
-        searchBtn.disabled = true;
-        searchBtn.classList.add("disabled-display");
-        searchBtn.classList.remove("cursor");
+		searchBtns.forEach(searchBtn => {
+			searchBtn.disabled = true;
+			searchBtn.classList.add("disabled-display");
+			searchBtn.classList.remove("cursor");		
+		});
     } else {
-        searchBtn.disabled = false;
-        searchBtn.classList.remove("disabled-display");    
-        searchBtn.classList.add("cursor");    
+		searchBtns.forEach(searchBtn => {
+			searchBtn.disabled = false;
+			searchBtn.classList.remove("disabled-display");    
+			searchBtn.classList.add("cursor");  
+		});
     }
 }
 
 function toggleSearchBox() {
-    clearSearchBox();
+    clearSearchBoxes();
     
     if (searchBoxDisplayed) {
-        searchContainer.classList.add("hidden");
+		searchContainers.forEach(searchContainer => {
+			searchContainer.classList.add("hidden");
+		});
         categoryLink.classList.remove("hidden");
     } else {
-        searchContainer.classList.remove("hidden");
+		searchContainers.forEach(searchContainer => {
+			searchContainer.classList.remove("hidden");
+		});
         categoryLink.classList.add("hidden");
     }
     
     searchBoxDisplayed = !searchBoxDisplayed;
 }
 
-function clearSearchBox() {
-    searchBox.value = "";
+function clearSearchBoxes() {
+	searchBoxes.forEach(searchBox => {
+		searchBox.value = "";
+	});
 }
 
 function hideSidebarSubBox(e) {
     //sidebarSideBox.classList.add("hidden");
     e.target.lastElementChild.lastElementChild.innerHTML = "";
+	sidebarDisplayed = false;
 }
 
 function displaySidebarSubBox(e) {
@@ -52,12 +65,12 @@ function displaySidebarSubBox(e) {
     const sidebarSideBox = document.createElement('div');
     sidebarSideBox.id = "sidebar-side-box";
     
-    const x = document.createElement('div');
-    x.id = "abc";
-    const y = document.createElement('div');
-    y.id = "def";
-    x.appendChild(y);
-    sidebarSideBox.appendChild(x);
+    const thoughtArrowBubbleContainer = document.createElement('div');
+    thoughtArrowBubbleContainer.id = "thought-arrow-bubble-container";
+    const thoughtArrowBubble = document.createElement('div');
+    thoughtArrowBubble.id = "thought-arrow-bubble";
+    thoughtArrowBubbleContainer.appendChild(thoughtArrowBubble);
+    sidebarSideBox.appendChild(thoughtArrowBubbleContainer);
     
     const sideBoxHeader = document.createElement('h5');
     sideBoxHeader.textContent = e.target.textContent.trim();
@@ -83,21 +96,43 @@ function displaySidebarSubBox(e) {
         sidebarSideBox.style.bottom = ((window.innerHeight - rect.bottom) - 30) + "px";	
   
         const sidebarSideBoxRect = sidebarSideBox.getBoundingClientRect();  
-        y.style.bottom = (((sidebarSideBoxRect.bottom - sidebarSideBoxRect.top) - 50) * -1) + "px";
+        thoughtArrowBubble.style.bottom = (((sidebarSideBoxRect.bottom - sidebarSideBoxRect.top) - 50) * -1) + "px";
 
 	} else {
 	    sidebarSideBox.style.top = (rect.top - 40) + "px";	
-        y.style.top = "30px";
+        thoughtArrowBubble.style.top = "30px";
 	}
 }
 
-clearSearch.addEventListener('click', clearSearchBox);
-menuBtn.addEventListener('click', () => {
-    sidebarWidescreen.classList.remove("hidden");
-    sidebarDisplayedWidescreen = true;
+clearSearchBtns.forEach(clearSearchBtn => {
+	clearSearchBtn.addEventListener('click', clearSearchBoxes);
 });
 
-searchBox.addEventListener('keyup', searchBtnToggle);
+menuBtn.addEventListener('click', () => {
+	if (window.innerWidth > 649) {
+		sidebarWidescreen.classList.remove("hidden");	
+	} else {
+		if (mobileViewSidebarCloseBtn.classList.contains("hidden")) {
+			mobileViewSidebarCloseBtn.classList.remove("hidden");
+		}
+		mobileViewSidebar.classList.remove("hidden");
+		menuBtn.classList.add("hidden");
+		userBtn.classList.add("hidden");
+	}
+    sidebarDisplayed = true;
+});
+
+function hideMobileViewSidebarActions() {
+	mobileViewSidebarCloseBtn.classList.add("hidden");
+	mobileViewSidebar.classList.add("hidden");
+	menuBtn.classList.remove("hidden");
+	userBtn.classList.remove("hidden");
+}
+
+searchBoxes.forEach(searchBox => {
+	searchBox.addEventListener('keyup', searchBtnToggle);
+});
+
 activateSearchBtn.addEventListener('click', toggleSearchBox);
 sidebarWidescreen.addEventListener('mouseleave', () => {   
     setTimeout(() => { sidebarWidescreen.classList.add("hidden"); }, 500);
@@ -106,4 +141,15 @@ sidebarWidescreen.addEventListener('mouseleave', () => {
 withChildren.forEach(link => {
    link.addEventListener('mouseenter', displaySidebarSubBox); 
    link.addEventListener('mouseleave', hideSidebarSubBox); 
+});
+
+mobileViewSidebarCloseBtn.addEventListener('click', () => {
+	hideMobileViewSidebarActions();
+});
+
+window.addEventListener('resize', () => {
+	if (window.innerWidth > 649) {
+		hideMobileViewSidebarActions();
+	}
+
 });
