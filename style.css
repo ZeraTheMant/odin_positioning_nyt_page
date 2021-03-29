@@ -58,6 +58,12 @@ nav {
     grid-template-columns: 1fr 1fr 1fr;
     padding: 5px 20px;
     align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	background: white;
+	width: 100%;
 }
 
 nav div:last-child {
@@ -227,6 +233,7 @@ h5 {
 
 #mobile-view-sidebar {
 	width: 100%;
+	padding-top: 35px;
 }
 
 #mobile-view-sidebar a {
@@ -277,6 +284,10 @@ aside .search-box-container input {
 
 /* main css start */
 
+main {
+	padding-top: 45px;
+}
+
 main h1 {
 	font-family: cheltenhamBoldItalicHeadline;
 	border-bottom: 1px solid lightgrey;
@@ -286,7 +297,8 @@ main h1 {
 
 #main-header-container {
 	width: 90%;
-	margin: 50px auto 30px auto;
+	margin: 0px auto 30px auto;
+	padding-top: 0;
 }
 
 .circle i {
@@ -336,6 +348,10 @@ main h1 {
 #main-image {
 	width: 100%;
 	display: block;
+}
+
+#main-header-container {
+	padding-top: 30px;
 }
 
 #main-image-caption {
@@ -403,6 +419,14 @@ main h1 {
 	#main-image-photographer {
 		display: inline;
 		font-size: 0.9rem;
+	}
+	
+	#main-header-container  {
+		padding-top: 100px;
+	}
+	
+	main {
+		padding-top: 0;
 	}
 }
 
