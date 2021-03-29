@@ -79,7 +79,7 @@ function displaySidebarSubBox(e) {
     
     e.target.lastElementChild.lastElementChild.appendChild(sidebarSideBox);
     
-	if (rect.top >= (screen.height * 0.7)) {
+	if (rect.top >= (screen.height * 0.6)) {
         sidebarSideBox.style.bottom = ((window.innerHeight - rect.bottom) - 30) + "px";	
   
         const sidebarSideBoxRect = sidebarSideBox.getBoundingClientRect();  
