@@ -24,6 +24,14 @@
 
 /* general start */
 
+.georgia-font {
+	font-family: 'Georgia';
+}
+
+.italic {
+	font-style: italic;
+}
+
 .grey {
 	color: grey;
 }
@@ -369,6 +377,34 @@ main h1 {
 	font-size: 0.8rem;
 	display: block;
 	margin-top: 3px;
+}
+
+#author-name {
+	border-bottom: 1px solid grey;
+}
+
+#publication-date {
+	margin-top: 15px;
+	font-size: 0.9rem;
+}
+
+#article-info {
+	border-bottom: 1px solid grey;
+	padding-bottom: 50px;
+	margin-top: 40px;
+}
+
+.main-text {
+	color: grey;
+}
+
+.thin-margin {
+	width: 45%;
+	margin: auto;
+}
+
+#science-times-header {
+	font-family: franklinGothic;
 }
 
 /* main css end */
