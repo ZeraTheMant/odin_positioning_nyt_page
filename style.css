@@ -6,10 +6,26 @@
     padding: 0;
 }
 
+
+/* fonts start */
+
+@font-face {
+	font-family: franklinGothic;
+	src: url(fonts/FranklinGothic.ttf);
+}
+
+@font-face {
+	font-family: cheltenhamBoldItalicHeadline;
+	src: url("fonts/Cheltenham Bold Italic Headline.ttf");
+}
+
+/* fonts end */
+
+
 /* general start */
 
 body {
-    font-family: 'Franklin Gothic';
+	font-family: "Franklin Gothic";
 }
 
 .mobile-toggle {
@@ -67,7 +83,7 @@ nav div:last-child {
 #left-nav a {
     text-decoration: none;
     color: black;
-    font-weight: bold;
+`	font-weight: bold;
 }
 
 #left-nav a:hover {
@@ -132,7 +148,7 @@ button:hover {
 }
 
 #desktop-view-sidebar a {
-    font-weight: bold;
+	font-weight: bold;
     display: block;
     text-decoration: none;
     color: black;
@@ -255,6 +271,48 @@ aside .search-box-container input {
 
 
 
+/* main css start */
+
+main h1 {
+	font-family: cheltenhamBoldItalicHeadline;
+	border-bottom: 1px solid lightgrey;
+	font-size: 1.8rem;
+	padding-bottom: 20px;
+}
+
+#main-header-container {
+	width: 90%;
+	margin: 50px auto 20px auto;
+}
+
+.circle i {
+	font-weight: bold;
+}
+
+.circle {
+	border-radius: 50%;
+	background: lightgrey;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#header-actions {
+	gap: 15px;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.fa-bookmark,
+.fa-comment {
+	font-size: 2rem;
+}
+
+/* main css end */
+
+
 .display-based-on-screen-height {
     display: none;
 }
@@ -264,6 +322,16 @@ aside .search-box-container input {
     .display-based-on-screen-height {
         display: block;
     }
+}
+
+@media screen and (min-width: 800px) {
+	#main-header-container {
+		width: 45%;
+	}
+	
+	main h1 {
+		font-size: 2.3rem;
+	}
 }
 
 
