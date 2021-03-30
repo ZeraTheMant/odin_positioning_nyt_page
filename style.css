@@ -15,8 +15,18 @@
 }
 
 @font-face {
+	font-family: itcFranklinGothic;
+	src: url("fonts/ITC Franklin Gothic Book Regular.otf");
+}
+
+@font-face {
 	font-family: cheltenhamBoldItalicHeadline;
 	src: url("fonts/Cheltenham Bold Italic Headline.ttf");
+}
+
+@font-face {
+	font-family: cheltenhamBookRegular;
+	src: url("fonts/Cheltenham Book Regular.otf");
 }
 
 /* fonts end */
@@ -120,6 +130,7 @@ button {
     border-radius: 3px;
     padding: 8px;
     font-size: 0.8rem;
+    font-family: itcFranklinGothic;
 }
 
 input {
@@ -370,17 +381,20 @@ main h1 {
 	padding-top: 30px;
 }
 
-#main-image-caption {
-	color: #666;
-	width: 80%;
-	font-family: 'Times New Roman';
-	margin-top: 10px;
-	padding: 0 10px;
-	font-size: 0.9rem;
-	width: 100%;
+.caption {
+  	width: 80%; 
+	padding: 0 10px;    
 }
 
-#main-image-photographer {
+.caption,
+.non-title-caption {
+	color: #666;
+	font-family: 'Times New Roman';
+	margin-top: 10px;
+	font-size: 0.9rem;
+}
+
+.caption-author {
 	color: grey;
 	font-size: 0.8rem;
 	display: block;
@@ -439,14 +453,60 @@ main h1 {
     margin-top: 20px;
 }
 
-
-
 .text-link {
     color: #326891;
 }
 
 .text-link:hover {
     text-decoration: none;
+}
+
+#inflation-img-container {
+    width: 92%;
+    margin: 50px auto;
+}
+
+#inflation-img-container h3 {
+    font-family: cheltenhamBookRegular;
+}
+
+#inflation-title-info {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.inflation-img {
+    width: 100%;
+    display: block;
+}
+
+#inflation-images {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.inflation-img-desc {
+    font-family: itcFranklinGothic;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.desc {
+    margin-left: 10px;
+}
+
+#image-authors {
+    font-family: itcFranklinGothic;
+    font-size: 0.9rem;
+}
+
+iframe,
+#main-text-misc-container img {
+    width: 100%;
+}
+
+#main-text-misc-container {
+    margin: 30px auto;
 }
 
 /* main css end */
@@ -475,6 +535,16 @@ main h1 {
         width: 100%;
         grid-template-columns: 1.2fr 0.2fr;
     }
+    
+    #inflation-img-container {
+        width: 75%;
+    }
+    
+    #inflation-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
 }
 
 
@@ -492,13 +562,17 @@ main h1 {
 		width: 70%;
 	}
 	
-	#main-image-caption {
+	.caption {
 		font-size: 1.05rem;
 		padding: 0;
-		width: 80%;
+		width: 83%;
 	}
+    
+    .non-title-caption {
+        width: 95%;
+    }
 	
-	#main-image-photographer {
+	.caption-author {
 		display: inline;
 		font-size: 0.9rem;
 	}
