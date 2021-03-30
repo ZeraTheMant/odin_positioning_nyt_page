@@ -397,22 +397,56 @@ main h1 {
 }
 
 #article-info {
-	border-bottom: 1px solid grey;
 	padding-bottom: 50px;
 	margin-top: 40px;
 }
 
 .main-text {
-	color: grey;
+	font-size: 1.2rem;
+    line-height: 1.5;
 }
 
 .thin-margin {
-	width: 45%;
+	width: 92%;
 	margin: auto;
 }
 
 #science-times-header {
 	font-family: franklinGothic;
+    font-size: 0.9rem;
+}
+
+#article-sign-up-btn {
+    background: white;
+    border: 1px solid black;
+    color: black;
+    font-weight: bold;
+    width: 100%;
+}
+
+#science-times {
+    border-top: 1px solid grey;
+    display: grid;
+    grid-template-columns: 1.2fr 0.3fr;
+    grid-gap: 20px;
+    padding: 10px 5px 10px 0;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.thin-margin > .georgia-font {
+    margin-top: 20px;
+}
+
+
+
+.text-link {
+    color: #326891;
+}
+
+.text-link:hover {
+    text-decoration: none;
 }
 
 /* main css end */
@@ -432,6 +466,15 @@ main h1 {
 	main h1 {
 		font-size: 2.3rem;
 	}
+    
+    .thin-margin {
+        width: 45%;
+    }
+    
+    #science-times {
+        width: 100%;
+        grid-template-columns: 1.2fr 0.2fr;
+    }
 }
 
 
