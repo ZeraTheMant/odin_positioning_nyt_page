@@ -89,8 +89,7 @@ nav div:last-child {
 }
 
 #nyt-logo {
-    width: 184px;
-
+    width: 90px;
 }
 
 #nyt-logo-container {
@@ -549,6 +548,10 @@ iframe,
 
 
 @media only screen and (min-width: 1000px) {
+    #nyt-logo {
+        width: 184px;
+    }
+    
     .mobile-toggle {
         display: block;
     }   
