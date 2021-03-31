@@ -312,7 +312,7 @@ aside .search-box-container input {
 /* main css start */
 
 main {
-	padding-top: 45px;
+	padding: 45px 0;
 }
 
 main h1 {
@@ -342,9 +342,12 @@ main h1 {
 	align-items: center;
 }
 
-#header-actions {
+.outside-links {
 	gap: 15px;
 	align-items: center;
+}
+
+#header-actions {
 	margin-top: 20px;
 }
 
@@ -382,7 +385,7 @@ main h1 {
 }
 
 .caption {
-  	width: 80%; 
+  	width: 100%; 
 	padding: 0 10px;    
 }
 
@@ -509,7 +512,126 @@ iframe,
     margin: 30px auto;
 }
 
+#article-footer-text {
+    font-family: itcFranklinGothic;
+    color: grey;
+    font-size: 0.7rem;
+    width: 100%;
+}
+
+.article-footer-link {
+    color: grey;
+}
+
+.article-footer-link:hover {
+    text-decoration: none;
+}
+
+#main-footer {
+    margin-top: 20px;
+}
+
+#main-footer button {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+#footer-comments {
+    margin-top: 20px;
+}
+
+#footer-comments > div {
+    margin-top: 10px;
+}
+
+#more-info-container > div {
+    border-top: 2px solid black;
+}
+
 /* main css end */
+
+.more-info-card {
+
+}
+
+/* more info css start */
+
+.more-info-cards-container {
+    margin-top: 15px;
+}
+
+.more-info-content {
+    margin-top: 20px;
+}
+
+.card-img {
+    width: 100%;
+}
+
+.source,
+.card-title,
+.time-posted,
+ul li {
+    font-family: cheltenhamBookRegular;
+}
+
+.source,
+.time-posted {
+    font-size: 0.6rem;
+    color: grey;
+}
+
+.source {
+    text-align: right;  
+    display: none;
+}
+
+.time-posted {
+    margin-top: 5px;
+}
+
+.more-info-card {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 10px;
+}
+
+#more-info-container {
+    padding: 20px;
+}
+
+#more-info-contents {
+    padding-bottom: 10px;
+}
+
+#more-info-container a {
+    text-decoration: none;
+    color: black;
+}
+
+#most-popular {
+    padding: 20px 0 10px 0;
+}
+
+ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+ul li {
+    padding: 15px 0;
+    border-top: 1px solid grey;
+
+}
+
+
+
+#more-info-container ul li a:hover {
+    color: lightgrey;
+}
+
+/* more info css end */
 
 
 @media screen and (min-height: 700px) {
@@ -519,6 +641,11 @@ iframe,
 }
 
 @media screen and (min-width: 800px) {
+    #more-info-container > div {
+        border-top: 1px solid black;
+    }
+
+    
 	#main-header-container {
 		width: 45%;
 	}
@@ -529,6 +656,10 @@ iframe,
     
     .thin-margin {
         width: 45%;
+    }
+    
+    .caption {
+        width: 80%;
     }
     
     #science-times {
@@ -544,6 +675,42 @@ iframe,
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-gap: 10px;
+    }
+    
+    #footer-comments {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+    }
+    
+    #footer-comments > div {
+        margin-top: 0;
+    }
+
+    
+    #main-footer .outside-links {
+        justify-self: end;
+    }
+    
+    #more-info-container {
+        display: grid;
+        grid-template-columns: 2.6fr 1fr;
+        grid-gap: 30px;
+        padding: 20px 40px;
+    }
+    
+    .more-info-cards-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 15px;
+    }   
+    
+    .source {
+        display: block;
+    }
+    
+    .more-info-card {
+        display: block;
     }
 }
 
