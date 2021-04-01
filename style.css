@@ -88,7 +88,8 @@ nav div:last-child {
     justify-self: end;
 }
 
-#nyt-logo {
+#nyt-logo,
+#pre-footer-header  img {
     height: 30px;
     width: 150px;
 }
@@ -246,7 +247,7 @@ hr {
     position: relative;
 }
 
-h5 {
+#sidebar-side-box h5 {
     font-weight: normal;
     text-transform: uppercase;
     color: grey;
@@ -616,10 +617,13 @@ ul li {
 
 ul {
     list-style: none;
-    margin-top: 15px;
 }
 
-ul li {
+#more-info-container ul {
+    margin-top: 15px;   
+}
+
+#more-info-container ul li {
     padding: 15px 0;
     border-top: 1px solid grey;
 
@@ -632,6 +636,143 @@ ul li {
 }
 
 /* more info css end */
+
+
+
+/* pre-footer css start */
+
+#second-border-div {
+    width: 100%;
+    border-top: 1px solid lightgrey;
+    margin-top: 2px;
+}
+
+#pre-footer {
+    border-top: 2px solid lightgrey;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+#pre-footer a {
+    text-decoration: none;
+    color: #326891;
+    font-size: 0.7rem;
+}
+
+#pre-footer-header {
+    justify-content: space-between;
+}
+
+#pre-footer-header > div:first-child {
+    margin-top: 10px;
+}
+
+#pre-footer-header > p {
+    margin-top: 15px;
+}
+
+#pre-footer li a {
+    color: black;
+    font-family: itcFranklinGothic;
+}
+
+#pre-footer-links-container {
+    padding-top: 10px;
+}
+
+#pre-footer-links-desktop {
+    display: none
+}
+
+#pre-footer-links-desktop ul {
+    margin-top: 5px;
+}
+
+#pre-footer-links-desktop ul li a {
+    font-size: 0.9rem;
+}
+
+#pre-footer-links-desktop ul li a:hover {
+    text-decoration: underline;
+}
+
+#subscribe-section img {
+    width: 20px;
+}
+
+#subscribe-section img,
+#subscribe-section a {
+    vertical-align: middle;
+}
+
+#subscribe-section > ul > li > ul > li > a {
+   font-size: 0.7rem;
+}
+
+#subscribe-middle-section {
+    margin-top: 15px;
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 5px;
+}
+
+.spaced {
+    margin-top: 5px;
+}
+
+#pre-footer-contents {
+    padding: 0 20px;
+}
+
+#pre-footer-links-mobile a {
+    display: block;
+    color: black;
+    font-size: 0.9rem;
+}
+
+#pre-footer-links-mobile h4 {
+    padding: 10px 0;
+    border-top: 1px solid lightgrey;
+    cursor: pointer;
+}
+
+/* pre-footer css end */
+
+
+/* footer css start */
+
+footer {
+    padding: 10px;
+}
+
+footer a {
+    font-family: itcFranklinGothic;
+    color: grey;
+    font-size: 0.7rem;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer > div {
+    text-align: center
+}
+
+#footer-middle-menu {
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#footer-bottom-menu {
+    margin-top: 5px;
+}
+
+/* footer css end */
+
 
 
 @media screen and (min-width: 500px) {
@@ -720,11 +861,34 @@ ul li {
     .more-info-card {
         display: block;
     }
+    
+    #pre-footer-links-desktop {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+    #subscribe-section {
+        border-left: 1px solid lightgrey;
+        padding: 0 15px;
+    }
+    
+    #pre-footer {
+        width: 95%;
+    }
+    
+    #pre-footer-contents {
+        padding: 0;
+    }
+    
+    #pre-footer-links-mobile {
+        display: none;
+    }
 }
 
 
 @media only screen and (min-width: 1000px) {
-    #nyt-logo {
+    #nyt-logo,
+    #pre-footer-header  img {
         width: 184px;
         height: auto;
     }
@@ -764,6 +928,18 @@ ul li {
 	main {
 		padding-top: 0;
 	}
+    
+    footer > div {
+        display: inline;
+    }
+    
+    footer {
+        text-align: center;
+    }
+    
+    footer a {
+        padding: 0 5px;
+    }
 }
 
 .hidden {

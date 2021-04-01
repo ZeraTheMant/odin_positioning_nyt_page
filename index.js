@@ -11,6 +11,7 @@ const withChildren = document.querySelectorAll(".with-children");
 const mobileViewSidebarCloseBtn = document.querySelector("#mobile-view-sidebar-close-btn");
 const userBtn = document.querySelector("#user-btn");
 const main = document.querySelector("main");
+const mobilePreFooterOptions = document.querySelectorAll("#pre-footer-links-mobile h4");
 
 var searchBoxDisplayed = false;
 var sidebarDisplayed = false;
@@ -113,6 +114,25 @@ function showTheRest() {
 	main.classList.remove("hidden");
 }
 
+function togglePreFooterMenu(e) {
+    const checkBox = e.target.lastChild;
+    if (checkBox.checked) {
+        checkBox.checked = false;
+        e.target.style.color = "black";
+    } else {
+        checkBox.checked = true;
+        e.target.style.color = "grey";
+    }
+    
+    const contents = e.target.nextElementSibling;
+    
+    if (checkBox.checked) {
+        contents.classList.remove("hidden");
+    } else {
+        contents.classList.add("hidden");
+    }
+}
+
 clearSearchBtns.forEach(clearSearchBtn => {
 	clearSearchBtn.addEventListener('click', clearSearchBoxes);
 });
@@ -162,4 +182,8 @@ window.addEventListener('resize', () => {
 	if (window.innerWidth > 649) {
 		hideMobileViewSidebarActions();
 	}
+});
+
+mobilePreFooterOptions.forEach(option => {
+   option.addEventListener('click', togglePreFooterMenu);
 });
