@@ -11,6 +11,9 @@ const withChildren = document.querySelectorAll(".with-children");
 const mobileViewSidebarCloseBtn = document.querySelector("#mobile-view-sidebar-close-btn");
 const userBtn = document.querySelector("#user-btn");
 const main = document.querySelector("main");
+const moreInfoContainer = document.querySelector("#more-info-container");
+const preFooter = document.querySelector("#pre-footer");
+const footer = document.querySelector("footer");
 const mobilePreFooterOptions = document.querySelectorAll("#pre-footer-links-mobile h4");
 
 var searchBoxDisplayed = false;
@@ -108,10 +111,16 @@ function displaySidebarSubBox(e) {
 
 function hideTheRest() {
 	main.classList.add("hidden");
+	moreInfoContainer.classList.add("hidden");
+	preFooter.classList.add("hidden");
+	footer.classList.add("hidden");
 }
 
 function showTheRest() {
 	main.classList.remove("hidden");
+	moreInfoContainer.classList.remove("hidden");
+	preFooter.classList.remove("hidden");
+	footer.classList.remove("hidden");
 }
 
 function togglePreFooterMenu(e) {
